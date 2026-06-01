@@ -10,7 +10,7 @@
     </parent>
     <groupId>edu.ban7</groupId>
     <artifactId>demo-devops-cda-26-back</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
     <name>demo-devops-cda-26-back</name>
     <description>demo-devops-cda-26-back</description>
     <url/>
