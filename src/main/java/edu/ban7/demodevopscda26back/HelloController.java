@@ -16,7 +16,7 @@ public class HelloController {
 
     @GetMapping("/")
     public ResponseEntity<String> hello () {
-       return new ResponseEntity<>("Hello dev, jwt secret = " + jwtSecret, HttpStatus.OK);
+       return new ResponseEntity<>("Hello prod, jwt secret = " + jwtSecret, HttpStatus.OK);
     }
 
 }
