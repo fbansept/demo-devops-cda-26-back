@@ -10,7 +10,7 @@ services:
       - postgres_data:/var/lib/postgresql
 
   app:
-    image: fbansept/demo-devops-cda-26-back:0.0.4
+    image: fbansept/demo-devops-cda-26-back:0.0.5
     ports:
       - "8080:8080"
     depends_on:
