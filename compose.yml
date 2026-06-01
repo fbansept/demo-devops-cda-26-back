@@ -6,13 +6,11 @@ services:
       POSTGRES_PASSWORD: root
       POSTGRES_DB: db
       TZ: UTC
-    ports:
-      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql
 
   app:
-    build: .
+    image: fbansept/demo-devops-cda-26-back:0.0.2
     ports:
       - "8080:8080"
     depends_on:
