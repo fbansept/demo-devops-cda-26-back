@@ -34,8 +34,14 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+    - name: Extract project version
+      run: echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
+
     - name: Build docker image
       run: docker build -t fbansept/demo-devops-cda-26-back .
+
+    - name: Tag image with version from pom.xml
+      run: docker tag fbansept/demo-devops-cda-26-back fbansept/demo-devops-cda-26-back:${{ env.VERSION }}
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v4
@@ -45,5 +51,8 @@ jobs:
 
     - name: Push docker image
       run: docker push fbansept/demo-devops-cda-26-back
+
+    - name: Push docker image with version
+      run: docker push fbansept/demo-devops-cda-26-back:${{ env.VERSION }}
 
 
